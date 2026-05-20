@@ -1,3 +1,5 @@
+sum of x and y to 2.find sum of x and y
+
 public class main {
 Public static void main(String[] args) {
         int x = 15;

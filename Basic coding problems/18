@@ -1,0 +1,44 @@
+Question Statement: 
+1. You are given two numbers n and k. You are required to rotate n, k times to the right. If k is positive, rotate to the right i.e. remove rightmost digit and make it leftmost. Do the reverse for negative value of k. Also k can have an absolute value larger than number of digits in n.
+2. Take as input n and k.
+3. Print the rotated number.
+4. Note - Assume that the number of rotations will not cause leading 0's in the result. e.g. such an input will not be given
+   n = 12340056
+   k = 3
+   r = 05612340
+
+=>import java.util.Scanner;
+public class lec24 {
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        //let input the number n and how much times to rotate the number is k
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+
+        //now we have to find the digits in number n
+        int temp = n;
+        int nod = 0;
+        while(temp>0){
+            temp = temp/10;
+            nod++;
+        }
+
+        //now if user input k is 5 or 10 or 15 or 20 then we have to rotate the number only 1 time because after 10 times the number will be same as original number
+        k = k%nod;
+        //now if user input k less than 0 then we have to convert it into positive number because we can rotate the number in both direction
+        if(k<0){
+            k = k + nod;
+        }
+
+        //now we have to rotate the number k times
+        int div = (int)Math.pow(10,k);
+        int mult = (int)Math.pow(10,nod-k);
+        int q = n/div;
+        int r = n%div;
+        int ans = r*mult + q;
+        System.out.println(ans);
+
+        //close the scanner
+        scn.close();
+    }
+}

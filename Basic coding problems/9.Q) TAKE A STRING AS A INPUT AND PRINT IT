@@ -1,0 +1,12 @@
+Q) TAKE A STRING AS A INPUT AND PRINT IT
+
+import java.util.Scanner;
+public class input {
+    public static void main(String [] args) {
+        Scanner scn = new Scanner(System.in);
+        String n =  scn.nextLine();
+        System.out.println("hello "+n);
+        scn.close();
+    }
+}
+

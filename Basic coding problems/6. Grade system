@@ -1,0 +1,29 @@
+You are given as input marks of a student.
+Display an appropriate message based on the following rules:
+2.1 For marks above 90, print "excellent"
+2.2 For marks above 80 and less than or equal to 90, print "good"
+2.3 For marks above 70 and less than or equal to 80, print "fair"
+2.4 For marks above 60 and less than or equal to 70, print "meets expectations"
+2.5 For marks less than or equal to 60, print "below par"
+=> public class Main {
+    public static void main(String[] args) {
+
+        int marks = 69;
+
+        if (marks > 90) {
+            System.out.println("EXCELLENT!");
+        }
+        else if (marks > 80 && marks <= 90) {
+            System.out.println("GOOD!");
+        }
+        else if (marks > 70 && marks <= 80) {
+            System.out.println("FAIR!");
+        }
+        else if (marks > 60 && marks <= 70) {
+            System.out.println("MEETS EXPECTATIONS!");
+        }
+        else {
+            System.out.println("BELOW PAR!");
+        }
+    }
+}

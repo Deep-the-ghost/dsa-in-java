@@ -1,0 +1,33 @@
+Question Statement: 
+1. You are required to print the Greatest Common Divisor (GCD) of two numbers. 
+2. You are also required to print the Lowest Common Multiple (LCM) of the same numbers. 
+3. Take input "num1" and "num2" as the two numbers. 
+4. Print their GCD and LCM.
+=>
+import java.util.Scanner;
+public class gcd{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        
+        //lets input those two numbers
+        int a = scn.nextInt();
+        int b = scn.nextInt();
+        
+        //we have to find the gcd using kids techniqe 
+        int a1 = a;
+        int b1 = b;
+        
+        while(b1%a1 != 0) {
+            int rem = b1 % a1;
+             b1 = a1 ;
+             a1 = rem ;
+        }
+        //when b1%a1 == 0 then a1 will be the gcd of a & b
+        int gcd = a1;
+        int lcm = (a*b)/gcd ;
+        
+        // lets print gcd and lcm
+        System.out.println(gcd+"is the gcd");
+        System.out.println(lcm + "is the lcm");
+    }
+}

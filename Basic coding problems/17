@@ -1,0 +1,29 @@
+
+Inverse of a number 
+
+
+import java.util.Scanner;
+public class input {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in) ;
+        int n = scn.nextInt();
+
+
+        int nod = 0;
+        int num = 0;
+        while(n > 0){
+            nod++;
+            int place = nod;
+            int dig = n%10;
+            num = num + place*(int)Math.pow(10,dig-1);
+            n = n/10;
+        }
+        System.out.println(num);
+    }
+}
+
+
+Output:
+213456
+123465
+
